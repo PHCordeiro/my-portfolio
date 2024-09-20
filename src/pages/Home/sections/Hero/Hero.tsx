@@ -20,22 +20,28 @@ const Hero = () => {
     return (
       <>
             <StyledHero>
-                <Container>
+                <Container maxWidth="lg">
                     <Grid container spacing={2}>
-                        <Grid size={{ xs: 4, md: 4}}>
+                        <Grid size={{ xs: 12, md: 4}}>
                             <StyledImage src={Avatar} />
                         </Grid>
-                        <Grid size={{ xs: 8, md: 8}}>
+                        <Grid size={{ xs: 12, md: 8}}>
                             <Typography color="primary" variant="h1" textAlign="center">Pedro Henrique de Souza Seabra Mattos Cordeiro</Typography>
                             <Typography color="primary" variant="h2" textAlign="center">I'm a Computer Engineer</Typography>
-                            <Button> 
-                                <DownloadIcon />
-                                Download CV 
-                            </Button>
-                            <Button> 
-                                <EmailIcon />
-                                Contact me 
-                            </Button>
+                            <Grid container display="flex" justifyContent="center">
+                                <Grid size={{ xs: 12, md: 4}}>
+                                    <Button> 
+                                        <DownloadIcon />
+                                        Download CV 
+                                    </Button>
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 4}}>
+                                    <Button> 
+                                        <EmailIcon />
+                                        Contact me 
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Container>
