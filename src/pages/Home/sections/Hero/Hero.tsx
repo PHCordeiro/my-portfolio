@@ -1,20 +1,24 @@
 import { Container, Grid, styled } from "@mui/system"
 import Avatar from "../../../../assets/images/avatar.jpeg"
-import { Button, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
+import StyledButton from "../../../../components/StyledButton/StyledButton";
 
 const Hero = () => {
 
     //Componente Estilizado
-    const StyledHero = styled("div")(() => ({
-        backgroundColor: "black",
-        height: "100vh"
+    const StyledHero = styled("div")(({theme}) => ({
+        backgroundColor: theme.palette.primary.main,
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
     }))
 
-    const StyledImage = styled("img")(() => ({
-        width: "100%",
-        borderRadius: "50%"
+    const StyledImage = styled("img")(({theme}) => ({
+        width: "80%",
+        borderRadius: "50%",
+        border: '5px solid white',
     }))
 
     return (
@@ -26,20 +30,24 @@ const Hero = () => {
                             <StyledImage src={Avatar} />
                         </Grid>
                         <Grid size={{ xs: 12, md: 8}}>
-                            <Typography color="primary" variant="h1" textAlign="center">Pedro Henrique de Souza Seabra Mattos Cordeiro</Typography>
-                            <Typography color="primary" variant="h2" textAlign="center">I'm a Computer Engineer</Typography>
-                            <Grid container display="flex" justifyContent="center">
+                            <Typography color="primary.contrastText" variant="h1" textAlign="center">Pedro Henrique de Souza Seabra Mattos Cordeiro</Typography>
+                            <Typography color="primary.contrastText" variant="h2" textAlign="center">I'm a Computer Engineer</Typography>
+                            <Grid container display="flex" justifyContent="center" spacing={3}>
                                 <Grid size={{ xs: 12, md: 4}}>
-                                    <Button> 
+                                    <StyledButton>
                                         <DownloadIcon />
-                                        Download CV 
-                                    </Button>
+                                        <Typography>
+                                            Download CV 
+                                        </Typography>
+                                    </StyledButton>
                                 </Grid>
                                 <Grid size={{ xs: 12, md: 4}}>
-                                    <Button> 
+                                    <StyledButton> 
                                         <EmailIcon />
-                                        Contact me 
-                                    </Button>
+                                        <Typography>
+                                            Contact me 
+                                        </Typography>
+                                    </StyledButton>
                                 </Grid>
                             </Grid>
                         </Grid>
